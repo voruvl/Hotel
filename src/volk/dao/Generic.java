@@ -7,9 +7,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
-import org.hibernate.criterion.Expression;
+import org.hibernate.StaleStateException;
 
-import volk.domain.Guest;
 import volk.util.HibernateUtil;
 
 public abstract class Generic<T> implements IDaoGeneric<T> {
@@ -73,8 +72,13 @@ public abstract class Generic<T> implements IDaoGeneric<T> {
 	@Override
 	public void delete(T t) throws SQLException {
 		session.beginTransaction();
+		try{
 		deleteObject(t);
 		session.getTransaction().commit();
+		}catch(StaleStateException e ){
+			log.error("Not entering identifier");
+		}
+		
 	}
 
 }
