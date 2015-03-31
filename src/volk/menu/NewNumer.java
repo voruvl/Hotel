@@ -25,7 +25,7 @@ public class NewNumer extends AMenu {
 			numer.setPrice(Functions.getInteger());
 			System.out.println("Enter count capacity new numer");
 			numer.setCapacity(Functions.getInteger());
-			numer.setState(1);
+//			numer.setState(1);
 			table.insert(numer);
 		} catch (SQLException e) {
 			e.printStackTrace();

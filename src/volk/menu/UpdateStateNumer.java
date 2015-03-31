@@ -24,8 +24,7 @@ public class UpdateStateNumer extends AMenu {
 			
 			for(Object numer:table.select()){
 				Numer numerNew =(Numer)numer;
-				System.out.print(numerNew+" state ");
-				System.out.println(dao.getObject(numerNew.getState()).getNameState());
+				System.out.print(numerNew);
 				
 			}
 			System.out.println("Enter id numer");
@@ -36,7 +35,7 @@ public class UpdateStateNumer extends AMenu {
 				System.out.println((StateNumer) state);
 			}
 			System.out.println("Enter id state");
-			numer.setState(Functions.getInteger());
+//			numer.setState(Functions.getInteger());
 			table = new DaoNumer();
 			table.update(numer);
 			

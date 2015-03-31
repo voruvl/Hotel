@@ -34,8 +34,7 @@ public class NewGuest extends AMenu {
 			
 			for(Object numer:numerDao.select()){
 				Numer numerNew =(Numer)numer;
-				System.out.print(numerNew+" state ");
-				System.out.println(stateDao.getObject(numerNew.getState()).getNameState());
+				System.out.print(numerNew);
 			}
 			
 			guest.setNumer(Functions.getInteger());

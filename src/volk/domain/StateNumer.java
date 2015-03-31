@@ -13,18 +13,19 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "statenumer")
 public class StateNumer implements Serializable {
-
+	@Id
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
+	@Column(name = "id")
 	private int id;
+	@Column(name = "statename")
 	private String nameState;
 
 	public StateNumer() {
 
 	}
 
-	@Id
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name = "increment", strategy = "increment")
-	@Column(name = "id")
+	
 	public int getId() {
 		return id;
 	}
@@ -33,7 +34,7 @@ public class StateNumer implements Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "statename")
+	
 	public String getNameState() {
 		return nameState;
 	}

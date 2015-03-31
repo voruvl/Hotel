@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -13,21 +15,25 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "numer")
 public class Numer implements Serializable {
-
+	@Id
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
+	@Column(name = "id")
 	private int id;
+	@Column(name = "stars")
 	private int stars;
+	@Column(name = "price")
 	private int price;
+	@Column(name = "capacity")
 	private int capacity;
-	private int state;
+	@ManyToOne
+	@JoinColumn(name = "state", referencedColumnName = "id")
+	private StateNumer state;
 
 	public Numer() {
 
 	}
 
-	@Id
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name = "increment", strategy = "increment")
-	@Column(name = "id")
 	public int getId() {
 		return id;
 	}
@@ -36,7 +42,6 @@ public class Numer implements Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "stars")
 	public int getStars() {
 		return stars;
 	}
@@ -45,7 +50,6 @@ public class Numer implements Serializable {
 		this.stars = stars;
 	}
 
-	@Column(name = "price")
 	public int getPrice() {
 		return price;
 	}
@@ -54,7 +58,6 @@ public class Numer implements Serializable {
 		this.price = price;
 	}
 
-	@Column(name = "capacity")
 	public int getCapacity() {
 		return capacity;
 	}
@@ -63,19 +66,10 @@ public class Numer implements Serializable {
 		this.capacity = capacity;
 	}
 
-	@Column(name = "state")
-	public int getState() {
-		return state;
-	}
-
-	public void setState(int state) {
-		this.state = state;
-	}
-
 	@Override
 	public String toString() {
 		return "Numer " + id + ", stars " + stars + ", price " + price
-				+ ", capacity " + capacity;
+				+ ", capacity " + capacity + " state " + state.getNameState();
 	}
 
 }
