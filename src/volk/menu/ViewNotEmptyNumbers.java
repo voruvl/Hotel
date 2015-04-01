@@ -28,7 +28,7 @@ public class ViewNotEmptyNumbers extends AMenu {
 
 			for (int i = 0; i < numers.size(); i++) {
 				for (int j = 0; j < guests.size(); j++) {
-					if (guests.get(j).getNumer() == numers.get(i).getId()) {
+					if (guests.get(j).getNumer().getId() == numers.get(i).getId()) {
 						System.out.print(numers.get(i)+ "\n");
 						break;
 					}

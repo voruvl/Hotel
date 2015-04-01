@@ -37,7 +37,7 @@ public class NewGuest extends AMenu {
 				System.out.print(numerNew);
 			}
 			
-			guest.setNumer(Functions.getInteger());
+//			guest.setNumer(Functions.getInteger());
 			table.insert(guest);
 		} catch (SQLException e) {
 			e.printStackTrace();

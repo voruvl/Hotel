@@ -168,7 +168,7 @@ public class Server {
 			if (obj instanceof ServiceInGuest) {
 				obj = (ServiceInGuest) obj;
 				table = new DaoServiceInGuest();
-				key = ((ServiceInGuest) obj).getIdGuest();
+				key = ((ServiceInGuest) obj).getIdGuest().getId();
 			}
 			if (obj instanceof Numer) {
 				obj = (Numer) obj;

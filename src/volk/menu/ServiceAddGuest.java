@@ -33,14 +33,14 @@ public class ServiceAddGuest extends AMenu {
 			}
 			System.out.println("Entering id guest for inserting service");
 			
-			serviceInGuest.setIdGuest(Functions.getInteger());
+//			serviceInGuest.setIdGuest(Functions.getInteger());
 			
 			for(Object service:serviceDao.select()){
 				System.out.println((Service)service);}
 			
 			System.out.println("Entering id guest for inserting service");
 			
-			serviceInGuest.setIdService(Functions.getInteger());
+//			serviceInGuest.setIdService(Functions.getInteger());
 			
 			table.insert(serviceInGuest);
 		} catch (SQLException e) {

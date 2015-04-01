@@ -15,6 +15,9 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "numer")
 public class Numer implements Serializable {
+	
+
+	private static final long serialVersionUID = 7773176703595149295L;
 	@Id
 	@GeneratedValue(generator = "increment")
 	@GenericGenerator(name = "increment", strategy = "increment")
@@ -64,6 +67,14 @@ public class Numer implements Serializable {
 
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
+	}
+
+	public StateNumer getState() {
+		return state;
+	}
+
+	public void setState(StateNumer state) {
+		this.state = state;
 	}
 
 	@Override

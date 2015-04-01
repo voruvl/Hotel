@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -13,18 +15,25 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "serviceinguest")
 public class ServiceInGuest implements Serializable {
-	private int id;
-	private int idGuest;
-	private int idService;
-	
-	public ServiceInGuest() {
 
-	}
 	
+	private static final long serialVersionUID = -8269100404331490304L;
 	@Id
 	@GeneratedValue(generator = "increment")
 	@GenericGenerator(name = "increment", strategy = "increment")
 	@Column(name = "id")
+	private int id;
+	@ManyToOne
+	@JoinColumn(name = "idguest", referencedColumnName = "id")
+	private Guest idGuest;
+	@ManyToOne
+	@JoinColumn(name = "idservice", referencedColumnName = "id")
+	private Service idService;
+
+	public ServiceInGuest() {
+
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -33,26 +42,20 @@ public class ServiceInGuest implements Serializable {
 		this.id = id;
 	}
 
-	
-
-		
-	@Column(name = "idguest")
-	public int getIdGuest() {
+	public Guest getIdGuest() {
 		return idGuest;
 	}
 
-	public void setIdGuest(int idGuest) {
+	public void setIdGuest(Guest idGuest) {
 		this.idGuest = idGuest;
 	}
-	
-	@Column(name = "idservice")
-	public int getIdService() {
+
+	public Service getIdService() {
 		return idService;
 	}
 
-	public void setIdService(int idService) {
+	public void setIdService(Service idService) {
 		this.idService = idService;
 	}
 
 }
-

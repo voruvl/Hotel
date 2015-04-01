@@ -13,18 +13,23 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "service")
 public class Service implements Serializable {
-	private int id;
+
+	
+	private static final long serialVersionUID = 2770043175816462706L;
+	@Id
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
+	@Column(name = "id")private int id;
+	@Column(name = "name")
 	private String nameService;
+	@Column(name = "price")
 	private int price;
 
 	public Service() {
 
 	}
 
-	@Id
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name = "increment", strategy = "increment")
-	@Column(name = "id")
+	
 	public int getId() {
 		return id;
 	}
@@ -32,7 +37,7 @@ public class Service implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-	@Column(name = "name")
+	
 	public String getNameService() {
 		return nameService;
 	}
@@ -40,7 +45,7 @@ public class Service implements Serializable {
 	public void setNameService(String nameService) {
 		this.nameService = nameService;
 	}
-	@Column(name = "price")
+	
 	public int getPrice() {
 		return price;
 	}

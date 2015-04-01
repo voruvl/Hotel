@@ -42,11 +42,12 @@ public class GetRezult {
 		return tableDao.getObject(key);
 	}
 
-	 public List<?> getSelectPkField(Generic tableDao, int key)
-	 throws SQLException {
-	
-	 return tableDao.selectPk(key);
-	 }
+	public List<?> getSelectPkField(Generic tableDao, int key)
+			throws SQLException {
+
+		return tableDao.selectPk(key);
+	}
+
 	public Object getObject(Object obj) throws SQLException {
 		Object rezult = null;
 		try {
@@ -56,7 +57,7 @@ public class GetRezult {
 				rezult = getTypeDao(obj).getObject(((Guest) obj).getId());
 			if (obj instanceof ServiceInGuest)
 				rezult = getTypeDao(obj).getObject(
-						((ServiceInGuest) obj).getIdGuest());
+						((ServiceInGuest) obj).getIdGuest().getId());
 			if (obj instanceof Numer)
 				rezult = getTypeDao(obj).getObject(((Numer) obj).getId());
 			if (obj instanceof StateNumer)

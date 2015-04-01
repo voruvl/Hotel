@@ -13,6 +13,8 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "statenumer")
 public class StateNumer implements Serializable {
+	
+	private static final long serialVersionUID = 4588730968520297054L;
 	@Id
 	@GeneratedValue(generator = "increment")
 	@GenericGenerator(name = "increment", strategy = "increment")
@@ -25,7 +27,6 @@ public class StateNumer implements Serializable {
 
 	}
 
-	
 	public int getId() {
 		return id;
 	}
@@ -34,7 +35,6 @@ public class StateNumer implements Serializable {
 		this.id = id;
 	}
 
-	
 	public String getNameState() {
 		return nameState;
 	}
