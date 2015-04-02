@@ -42,12 +42,6 @@ public class GetRezult {
 		return tableDao.getObject(key);
 	}
 
-	public List<?> getSelectPkField(Generic tableDao, int key)
-			throws SQLException {
-
-		return tableDao.selectPk(key);
-	}
-
 	public Object getObject(Object obj) throws SQLException {
 		Object rezult = null;
 		try {

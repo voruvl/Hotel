@@ -22,36 +22,30 @@ public class DaoNumer extends Generic<Numer> implements Serializable {
 
 	@Override
 	protected void insertObject(Numer numer) {
-		
+
 		session.save(numer);
-	
+
 	}
 
 	@Override
 	public void updateObject(Numer numer) {
-		
+
 		session.update(numer);
-	
+
 	}
 
 	@Override
 	public void deleteObject(Numer numer) {
 
 		session.delete(numer);
-		
+
 	}
 
 	@Override
 	public Numer getObjectPk(int key) {
-		List<Numer> numer=session.createCriteria(Numer.class)
+		List<Numer> numer = session.createCriteria(Numer.class)
 				.add(Expression.eq("id", key)).list();
 		return numer.get(0);
-	}
-
-	@Override
-	public List<Numer> getObjectsList(int key) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

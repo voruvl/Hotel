@@ -44,10 +44,6 @@ public class DaoStateNumer extends Generic<StateNumer> implements Serializable {
 		return stateNumer.get(0);
 	}
 
-	@Override
-	public List<StateNumer> getObjectsList(int key) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

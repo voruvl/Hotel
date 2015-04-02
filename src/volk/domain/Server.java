@@ -33,7 +33,6 @@ public class Server {
 	private static final int UPDATE = 3;
 	private static final int DELETE = 4;
 	private static final int SELECTPK = 5;
-	protected static final int SELECTPKLIST = 6;
 	private Generic table;
 	Logger log = Logger.getLogger(Server.class);
 
@@ -73,10 +72,7 @@ public class Server {
 
 							selectpkTable(table);
 						}
-						if (command == SELECTPKLIST) {
-
-							selectpkList(table);
-						}
+						
 					}
 				}
 			}
@@ -87,33 +83,6 @@ public class Server {
 		}
 	}
 
-	private void selectpkList(Object obj) {
-		try {
-
-			if (obj instanceof Service) {
-				obj = (Service) obj;
-			}
-			if (obj instanceof Guest)
-				obj = (Guest) obj;
-			if (obj instanceof ServiceInGuest) {
-
-				obj = (ServiceInGuest) obj;
-				sendObject(new GetRezult().getSelectPkField(
-						(new GetRezult().getTypeDao(obj)),
-						((ServiceInGuest) obj).getIdGuest()));
-
-			}
-
-			if (obj instanceof Numer)
-				obj = (Numer) obj;
-			if (obj instanceof StateNumer)
-				obj = (StateNumer) obj;
-
-		} catch (SQLException e1) {
-
-			e1.printStackTrace();
-		}
-	}
 
 	public Generic getTableDao(Object obj) {
 		Generic tableDao = null;

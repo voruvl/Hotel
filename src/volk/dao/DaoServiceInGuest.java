@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.hibernate.criterion.Expression;
 
+import volk.domain.Guest;
 import volk.domain.Service;
 import volk.domain.ServiceInGuest;
 
@@ -42,18 +43,14 @@ public class DaoServiceInGuest extends Generic<ServiceInGuest> implements
 	}
 
 	@Override
-	public ServiceInGuest getObjectPk(int key) {
+	public Object getObjectPk(int key) {
+		Guest guest = new Guest();
+		guest.setId(key);
 		List<ServiceInGuest> serviceInGuest = session
 				.createCriteria(ServiceInGuest.class)
-				.add(Expression.eq("idGuest", key)).list();
+				.add(Expression.eq("idGuest", guest)).list();
 		System.out.println(serviceInGuest);
-		return serviceInGuest.get(0);
+		return serviceInGuest;
 	}
 
-	public List<ServiceInGuest> getObjectsList(int key) {
-		List<ServiceInGuest> list = session
-				.createCriteria(ServiceInGuest.class)
-				.add(Expression.eq("idGuest", key)).list();
-		return list;
-	}
 }

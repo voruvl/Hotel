@@ -58,4 +58,10 @@ public class ServiceInGuest implements Serializable {
 		this.idService = idService;
 	}
 
+	@Override
+	public String toString() {
+		return "Guest " + idGuest.getName() +" numer " + idGuest.getNumer().getId() + ", Service "
+				+ idService.getNameService()+" price "+idService.getPrice();
+	}
+
 }

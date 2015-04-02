@@ -17,9 +17,7 @@ public abstract class Generic<T> implements IDaoGeneric<T> {
 
 	public abstract List<T> getSelectQuery();
 
-	public abstract List<T> getObjectsList(int key);
-
-	public abstract T getObjectPk(int key);
+	public abstract Object getObjectPk(int key);
 
 	protected abstract void insertObject(T t);
 
@@ -44,17 +42,12 @@ public abstract class Generic<T> implements IDaoGeneric<T> {
 	}
 
 	@Override
-	public T getObject(int key) throws SQLException {
+	public Object getObject(int key) throws SQLException {
 
 		return getObjectPk(key);
 	}
 
-	@Override
-	public List<T> selectPk(int key) throws SQLException {
-
-		return getObjectsList(key);
-	}
-
+	
 	@Override
 	public void insert(T t) throws SQLException {
 		session.beginTransaction();
