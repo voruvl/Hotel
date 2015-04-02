@@ -49,7 +49,6 @@ public class DaoServiceInGuest extends Generic<ServiceInGuest> implements
 		List<ServiceInGuest> serviceInGuest = session
 				.createCriteria(ServiceInGuest.class)
 				.add(Expression.eq("idGuest", guest)).list();
-		System.out.println(serviceInGuest);
 		return serviceInGuest;
 	}
 
