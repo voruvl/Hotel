@@ -9,6 +9,11 @@ import volk.domain.Service;
 
 public class DaoService extends Generic<Service> implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3032898474371322333L;
+
 	public DaoService() {
 		super();
 

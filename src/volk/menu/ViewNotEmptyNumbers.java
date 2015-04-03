@@ -18,7 +18,7 @@ public class ViewNotEmptyNumbers extends AMenu {
 
 	@Override
 	public void callMenu() {
-		DaoStateNumer dao = new DaoStateNumer();
+		new DaoStateNumer();
 		DaoGuest guestDao = new DaoGuest();
 
 		table = new DaoNumer();

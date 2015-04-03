@@ -21,7 +21,7 @@ public class NewGuest extends AMenu {
 	public void callMenu() {
 		table = new DaoGuest();
 		DaoNumer numerDao=new DaoNumer();
-		DaoStateNumer stateDao=new DaoStateNumer();
+		new DaoStateNumer();
 		try {
 			Guest guest = new Guest();
 			System.out.println("Enter name new guest");

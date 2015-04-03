@@ -17,7 +17,7 @@ public class CloningNumber extends AMenu {
 
 	@Override
 	public void callMenu() {
-		DaoStateNumer dao = new DaoStateNumer();
+		new DaoStateNumer();
 		table = new DaoNumer();
 		try {
 			System.out.println("Select numer for cloning ");

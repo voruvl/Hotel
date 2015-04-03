@@ -1,7 +1,6 @@
 package volk.dao;
 
 import java.io.Serializable;
-import java.sql.SQLException;
 import java.util.List;
 
 import org.hibernate.criterion.Expression;
@@ -9,6 +8,11 @@ import org.hibernate.criterion.Expression;
 import volk.domain.Guest;
 
 public class DaoGuest extends Generic<Guest> implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9191287985248777994L;
 
 	@Override
 	public List<Guest> getSelectQuery() {

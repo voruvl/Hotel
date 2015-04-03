@@ -5,10 +5,14 @@ import java.util.List;
 
 import org.hibernate.criterion.Expression;
 
-import volk.domain.Guest;
 import volk.domain.Numer;
 
 public class DaoNumer extends Generic<Numer> implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4627813057924508486L;
 
 	public DaoNumer() {
 		super();

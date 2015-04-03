@@ -9,6 +9,11 @@ import volk.domain.StateNumer;
 
 public class DaoStateNumer extends Generic<StateNumer> implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3959231267464011319L;
+
 	public DaoStateNumer() {
 		super();
 

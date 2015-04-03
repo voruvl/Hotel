@@ -6,11 +6,15 @@ import java.util.List;
 import org.hibernate.criterion.Expression;
 
 import volk.domain.Guest;
-import volk.domain.Service;
 import volk.domain.ServiceInGuest;
 
 public class DaoServiceInGuest extends Generic<ServiceInGuest> implements
 		Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6050272051800151646L;
 
 	public DaoServiceInGuest() {
 		super();
@@ -38,7 +42,9 @@ public class DaoServiceInGuest extends Generic<ServiceInGuest> implements
 	@Override
 	public void deleteObject(ServiceInGuest serviceInGuest) {
 
-		session.delete(serviceInGuest);
+		String hql="delete from serviceInGuest where idguest="+serviceInGuest.getIdGuest().getId()+" and idservice= "+serviceInGuest.getIdService().getId();
+		session.createSQLQuery(hql).executeUpdate();
+
 
 	}
 

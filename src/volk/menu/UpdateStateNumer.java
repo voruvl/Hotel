@@ -18,7 +18,7 @@ public class UpdateStateNumer extends AMenu {
 
 	@Override
 	public void callMenu() {
-		DaoStateNumer dao=new DaoStateNumer();
+		new DaoStateNumer();
 		table = new DaoNumer();
 		try {
 			

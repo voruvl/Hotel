@@ -26,7 +26,6 @@ public class Server {
 	private Socket socket;
 	private ObjectOutputStream to;
 	private ObjectInputStream from;
-	private Generic object;
 	private static final int EXIT = 0;
 	private static final int SELECT = 1;
 	private static final int INSERT = 2;
